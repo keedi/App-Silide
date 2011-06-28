@@ -25,8 +25,8 @@ slides:
 
         ![lp5ko][]
 
-      [keedi]: img/keedi.jpg "Keedi Kim" width=400px style="border: solid black 1px; float: right;"
-      [lp5ko]: img/lp5ko.jpg "거침없이 배우는 펄" style="border: solid black 1px;"
+      [keedi]: img/_keedi.jpg "Keedi Kim" width=400px style="border: solid black 1px; float: right;"
+      [lp5ko]: img/_lp5ko.jpg "거침없이 배우는 펄" style="border: solid black 1px;"
   -
     name: Seoul.pm
     section: |
@@ -48,31 +48,9 @@ slides:
       - twitter: [@keedi](http://twitter.com/keedi)
       - email: <keedi.k@gmail.com>
 
-      [perl]: img/perl-republic.png "use Perl;" width=400px style="border: solid black 1px; float: right; margin-top: 45px;"
+      [perl]: img/_perl-republic.png "use Perl;" width=400px style="border: solid black 1px; float: right; margin-top: 45px;"
   - Silide?
   - <strong>Si</strong>lex + S<strong>lide</strong>
-  -
-    name: SILEX
-    section: |
-      ----
-
-      ### What the *SILEX*?
-
-      - Mad for *Perl* :-D
-      - Mad for Open Source
-      - Perl & Open Source consulting & education
-      - Sponsor of Seoul.pm
-      - etc. (*CONFIDENTIAL*)
-
-      ----
-
-      ### Members' twitter
-
-      [@y0ngbin](http://twitter.com/y0ngbin),
-      [@keedi](http://twitter.com/keedi),
-      [@aanoaa](http://twitter.com/aanoaa),
-      [@JEEN_LEE](http://twitter.com/JEEN_LEE),
-      [@mintegrals](http://twitter.com/mintegrals)
   - Stolen from <br/> [Timmy Willison](http://www.timmywillison.com)
   -
     name: Features
@@ -129,9 +107,9 @@ slides:
       type: bash
       data: |
         $ cd ~/workspace/git
-        $ git clone git@git.silex.kr:tools.git
-        $ tree tools/silide
-        tools/silide
+        $ git clone git://github.com/keedi/App-Silide.git
+        $ tree App-Silide
+        App-Silide
         ├── css
         ├── img
         ├── js
@@ -142,7 +120,7 @@ slides:
         ├── silide.pl
         └── silide.yml
 
-        6 directories, 46 files
+        6 directories, 51 files
         $
   - How To Use?
   -
@@ -164,13 +142,14 @@ slides:
         $ silide.pl
         $ ls
         .
-        ├── css
-        ├── img
-        ├── index.html
-        ├── js
+        ├── css/
+        ├── img/
+        ├── js/
+        ├── lib/
+        ├── silide.pl
         └── silide.yml
 
-        3 directories, 45 files
+        4 directories, 49 files
         $
   -
     name: Edit and Run!
@@ -263,7 +242,7 @@ slides:
             image:
               desc: Wow...
               alt: good!
-              data: img/good.jpg
+              data: img/_good.jpg
               attr: width=500px
     section: |
       ### *image*: image section
@@ -278,7 +257,7 @@ slides:
     image:
       desc: Wow...
       alt: good!
-      data: img/good.jpg
+      data: img/_good.jpg
       attr: 'width=500px style="border: solid black 1px"'
   - Table
   -
@@ -401,10 +380,10 @@ slides:
   -
     image:
       alt: Any Questions?
-      data: img/qa.jpg
+      data: img/_qa.jpg
       attr: 'width=800px height=600px style="border: solid black 1px"'
   -
     image:
       alt: Thanks
-      data: img/thanks.gif
+      data: img/_thanks.gif
       attr: 'width=800px height=600px style="border: solid black 1px"'

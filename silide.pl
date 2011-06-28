@@ -21,12 +21,12 @@ const my $RESULT_FILE => 'index.html';
 const my $CSS_DIR     => 'css';
 const my $JS_DIR      => 'js';
 const my @IMG_FILES   => qw(
-    img/good.jpg
-    img/keedi.jpg
-    img/lp5ko.jpg
-    img/perl-republic.png
-    img/qa.jpg
-    img/thanks.gif
+    img/_good.jpg
+    img/_keedi.jpg
+    img/_lp5ko.jpg
+    img/_perl-republic.png
+    img/_qa.jpg
+    img/_thanks.gif
 );
 
 binmode STDIN,  ':utf8';
