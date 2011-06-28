@@ -9,13 +9,71 @@ color:
     fg: '#000000'
     bg: '#ff0000'
 slides:
+  -
+    name: Who Am I?
+    section: |
+      ![keedi][]
+
+      ----
+
+      - Mad for *Perl* ;-)
+      - Seoul Perl Mongers (*Seoul.pm*) Leader
+      - Work for *SILEX*
+      - Co-translator of [거침없이 배우는 펄, 지앤선](http://www.yes24.com/24/Goods/4433208?Acode=101)
+
+        ----
+
+        ![lp5ko][]
+
+      [keedi]: img/keedi.jpg "Keedi Kim" width=400px style="border: solid black 1px; float: right;"
+      [lp5ko]: img/lp5ko.jpg "거침없이 배우는 펄" style="border: solid black 1px;"
+  -
+    name: Seoul.pm
+    section: |
+      ![perl][]
+
+      ----
+
+      ### Seoul Perl Mongers
+
+      - Have questions about Perl & Perl community?
+      - Contact to Seoul.pm or me
+      - Join freenode #perl-kr
+      - Don't miss it!
+
+      ----
+
+      ### Feel free to ask. (except *homework* ;-)
+
+      - twitter: [@keedi](http://twitter.com/keedi)
+      - email: <keedi.k@gmail.com>
+
+      [perl]: img/perl-republic.png "use Perl;" width=400px style="border: solid black 1px; float: right; margin-top: 45px;"
   - Silide?
   - <strong>Si</strong>lex + S<strong>lide</strong>
-  - Stolen from <br/> [Timmy Willison](http://www.timmywillison.com)
   -
+    name: SILEX
     section: |
-      # This slide is for <br/> angry *@y0ngbin*
-      #### (and others... maybe...)
+      ----
+
+      ### What the *SILEX*?
+
+      - Mad for *Perl* :-D
+      - Mad for Open Source
+      - Perl & Open Source consulting & education
+      - Sponsor of Seoul.pm
+      - etc. (*CONFIDENTIAL*)
+
+      ----
+
+      ### Members' twitter
+
+      [@y0ngbin](http://twitter.com/y0ngbin),
+      [@keedi](http://twitter.com/keedi),
+      [@aanoaa](http://twitter.com/aanoaa),
+      [@JEEN_LEE](http://twitter.com/JEEN_LEE),
+      [@mintegrals](http://twitter.com/mintegrals)
+  - Stolen from <br/> [Timmy Willison](http://www.timmywillison.com)
   -
     name: Features
     section: |
