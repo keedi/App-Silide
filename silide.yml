@@ -105,7 +105,7 @@ slides:
   -
     name: Let's Clone!
     code:
-      desc: Clone from Silex repository
+      desc: Clone from github!
       type: bash
       data: |
         $ cd ~/workspace/git
