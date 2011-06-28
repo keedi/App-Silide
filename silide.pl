@@ -21,24 +21,27 @@ const my $RESULT_FILE => 'index.html';
 const my $CSS_DIR     => 'css';
 const my $JS_DIR      => 'js';
 const my @IMG_FILES   => qw(
-    img/good.jpg
-    img/qa.jpg
-    img/thanks.gif
+    img/_good.jpg
+    img/_keedi.jpg
+    img/_lp5ko.jpg
+    img/_perl-republic.png
+    img/_qa.jpg
+    img/_thanks.gif
 );
 
 binmode STDIN,  ':utf8';
 binmode STDOUT, ':utf8';
 
 my ( $opt, $usage ) = describe_options(
-    "%c %o ...",
+    "%c %o <new|clean>",
     [
         'slide|s=s',
         "slide file (default: $SILIDE_FILE)",
         { default => $SILIDE_FILE },
     ],
     [
-        'result=s',
-        "result file (default: $RESULT_FILE)",
+        'output|o=s',
+        "output file (default: $RESULT_FILE)",
         { default => $RESULT_FILE },
     ],
     [
@@ -49,24 +52,39 @@ my ( $opt, $usage ) = describe_options(
         "javascript directory (default: $JS_DIR)",
         { default => $JS_DIR },
     ],
-    [ 'clean', 'remove result files' ],
     [],
     [ 'verbose|v', 'print extra stuff', { default => 0 } ],
     [ 'help|h',    'print usage message and exit' ],
 );
 
 print( $usage->text ), exit if $opt->help;
-remove_tree( $opt->css, $opt->js, $opt->result, @IMG_FILES, ), exit
-    if $opt->clean;
 
-fcopy( catfile( $RealBin, $SILIDE_FILE ), $SILIDE_FILE )
-    unless -e $SILIDE_FILE;
-for my $img_file (@IMG_FILES) {
-    fcopy( catfile( $RealBin, $img_file ), $img_file ) unless -e $img_file;
+my $cmd = shift || 'update';
+$cmd = 'new' unless -f $opt->slide;
+
+given ($cmd) {
+    when ('clean') {
+        remove_tree( $opt->css, $opt->js, $opt->output, @IMG_FILES );
+        exit;
+    }
+    when ('new') {
+        fcopy( catfile( $RealBin, $SILIDE_FILE ), $SILIDE_FILE )
+            unless -e $SILIDE_FILE;
+        for my $img_file (@IMG_FILES) {
+            fcopy( catfile( $RealBin, $img_file ), $img_file ) unless -e $img_file;
+        }
+        dircopy( catfile( $RealBin, $JS_DIR ),  $opt->js );
+        dircopy( catfile( $RealBin, $CSS_DIR ), $opt->css );
+    }
+    when ('update') {
+        dircopy( catfile( $RealBin, $JS_DIR ),  $opt->js )  unless -e $opt->js;
+        dircopy( catfile( $RealBin, $CSS_DIR ), $opt->css ) unless -e $opt->css;
+    }
+    default {
+        print( $usage->text );
+        exit;
+    }
 }
-
-dircopy( catfile( $RealBin, $JS_DIR ),  $JS_DIR )  unless -e $JS_DIR;
-dircopy( catfile( $RealBin, $CSS_DIR ), $CSS_DIR ) unless -e $CSS_DIR;
 
 my $m = App::Silide::MultiMarkdown->new(
     tab_width     => 2,
@@ -257,11 +275,11 @@ END_SLIDE
 
 $output .= _get_footer();
 
-if ( $opt->result eq '-' ) {
+if ( $opt->output eq '-' ) {
     print $output;
 }
 else {
-    write_file( $opt->result, { binmode => ':utf8' }, $output );
+    write_file( $opt->output, { binmode => ':utf8' }, $output );
 }
 
 sub _get_header {
